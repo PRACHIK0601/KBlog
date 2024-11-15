@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Kenneth Aur code
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center text-white">Do you want to delete?</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a href="{% url 'tweet_list' %}" class="btn-success">Cancel</a>
+</form>
+
+{% endblock %}

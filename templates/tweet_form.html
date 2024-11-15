@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Kenneth Aur code
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center text-white">Welcome to Ken's Project</h1>
+<h2>
+    {% if form.instance.pk %} 
+    Edit Tweet
+    {% else %} 
+    create tweet 
+    {% endif %}
+<!-- enctype  because we are passing images too -->
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-warning" type="submit">Submit</button>
+        <a href="{% url 'tweet_list' %}">Back to tweet list</a>
+    </form>
+</h2> 
+{% endblock %}

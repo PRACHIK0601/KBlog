@@ -1,1 +1,2 @@
 # KBlog
+ Django Blog Website
